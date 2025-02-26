@@ -8,8 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
-  <!-- Improved Loading Screen -->
+  <!-- Loading Screen -->
   <div id="loadingScreen" class="loading-screen">
     <div class="poker-chip">
       <div class="chip-inner">
@@ -24,25 +23,22 @@
     </div>
   </div>
 
-  <!-- Card Particles Background -->
+  <!-- Card and Chip Particles Background -->
   <div id="cardParticles" class="card-particles"></div>
-  
-  <!-- White gradient overlay -->
-  <div class="white-gradient-overlay"></div>
+  <div id="chipParticles" class="chip-particles"></div>
 
   <div class="container">
     <!-- Poker Table Shape Background -->
     <div class="poker-table-bg"></div>
 
-    <!-- More Poker Elements -->
+    <!-- Floating Poker Elements -->
     <div class="floating-element chip"></div>
     <div class="floating-element chip2"></div>
     <div class="floating-element chip3"></div>
     <div class="floating-element card1"></div>
     <div class="floating-element card2"></div>
-    <div class="floating-element dice1"></div>
-    <div class="floating-element poker-hand"></div>
-    
+    <div class="floating-element poker-dice"></div>
+
     <header>
       <div class="logo">
         <div class="logo-cards">
@@ -55,139 +51,66 @@
       <p>Элитный покерный опыт</p>
     </header>
 
-    <!-- Stats Cards With Flip Effect -->
-    <section class="stats-section">
-      <div class="stats-container">
-        <div class="stat-card">
-          <div class="stat-card-inner">
-            <div class="stat-card-front">
-              <div class="stat-icon">🏆</div>
-              <div class="stat-number">15,000+</div>
-              <div class="stat-title">Турниров в месяц</div>
-            </div>
-            <div class="stat-card-back">
-              <p>Более 500 турниров ежедневно с разными бай-инами и форматами</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-card-inner">
-            <div class="stat-card-front green-accent">
-              <div class="stat-icon">👑</div>
-              <div class="stat-number">$1.5M</div>
-              <div class="stat-title">Ежемесячный призовой фонд</div>
-            </div>
-            <div class="stat-card-back green-accent">
-              <p>Гарантированный призовой фонд для всех турниров и специальных мероприятий</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-card-inner">
-            <div class="stat-card-front red-accent">
-              <div class="stat-icon">🔥</div>
-              <div class="stat-number">24/7</div>
-              <div class="stat-title">Доступность игр</div>
-            </div>
-            <div class="stat-card-back red-accent">
-              <p>Играйте в любое время с игроками со всего мира</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-card-inner">
-            <div class="stat-card-front">
-              <div class="stat-icon">🌐</div>
-              <div class="stat-number">50K+</div>
-              <div class="stat-title">Активных игроков</div>
-            </div>
-            <div class="stat-card-back">
-              <p>Разнообразное сообщество игроков всех уровней мастерства</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="hero">
-      <div class="glassmorphism white-glass">
+      <div class="glassmorphism">
         <div class="card-decoration left-top"></div>
         <div class="card-decoration right-bottom"></div>
-        <h2><i class="fas fa-crown"></i> Experience the Thrill of High-Stakes Poker</h2>
-        <p>QQQ Club предлагает премиальный и безопасный опыт онлайн-покера, эксклюзивно на ClubGG.</p>
-        <p>Выбирайте из широкого спектра игр, ставок и захватывающих турниров. Присоединяйтесь к нашему сообществу и поднимите свою игру на новый уровень!</p>
+        <h2><i class="fas fa-crown"></i> Погрузись в мир высоких ставок</h2>
+        <p>QQQ Club — это эксклюзивный покерный опыт на платформе ClubGG с турнирами и приватными столами.</p>
         <a href="t.me/qqqclub_manager" class="telegram-button">
           <i class="fab fa-telegram-plane"></i> Связаться с агентом
         </a>
-        <div class="poker-elements-group">
-          <div class="poker-card ace-spades"></div>
-          <div class="poker-card king-hearts"></div>
-          <div class="poker-chip red-chip"></div>
-          <div class="poker-chip blue-chip"></div>
-        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat glassmorphism flip-block">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <h3>5000+</h3>
+        <p>Активных игроков 🎉</p>
+      </div>
+      <div class="stat glassmorphism flip-block">
+        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+        <h3>150+</h3>
+        <p>Турниров в месяц 🏆</p>
+      </div>
+      <div class="stat glassmorphism flip-block">
+        <div class="stat-icon"><i class="fas fa-coins"></i></div>
+        <h3>$1M+</h3>
+        <p>Выигрышей 💰</p>
       </div>
     </section>
 
     <section class="features">
-      <div class="feature white-glass">
-        <div class="feature-icon green-icon"><i class="fas fa-coins"></i></div>
-        <h3>Высокие ставки, высокие награды</h3>
-        <p>Погрузитесь в захватывающие игры с высокими ставками и получите возможность выиграть по-крупному.</p>
+      <div class="feature glassmorphism">
+        <div class="feature-icon"><i class="fas fa-coins"></i></div>
+        <h3>Высокие ставки</h3>
+        <p>Играй на красных и зеленых столах с крупными призами.</p>
         <div class="card-corner top-left"></div>
         <div class="card-corner bottom-right"></div>
-        <div class="feature-decoration chips-pile"></div>
       </div>
-      <div class="feature white-glass">
-        <div class="feature-icon red-icon"><i class="fas fa-lock"></i></div>
-        <h3>Эксклюзивные приватные столы</h3>
-        <p>Создавайте собственные приватные столы или присоединяйтесь к существующим для персонализированных игр.</p>
+      <div class="feature glassmorphism">
+        <div class="feature-icon"><i class="fas fa-lock"></i></div>
+        <h3>Приватные игры</h3>
+        <p>Создай свой стол с покерными фишками и кубиками.</p>
         <div class="card-corner top-left"></div>
         <div class="card-corner bottom-right"></div>
-        <div class="feature-decoration dealer-button"></div>
       </div>
-      <div class="feature white-glass">
-        <div class="feature-icon blue-icon"><i class="fas fa-headset"></i></div>
-        <h3>Круглосуточная поддержка 24/7</h3>
-        <p>Наша специализированная служба поддержки доступна круглосуточно, чтобы помочь с любыми вопросами.</p>
+      <div class="feature glassmorphism">
+        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+        <h3>Поддержка 24/7</h3>
+        <p>Всегда на связи для твоей удачной руки.</p>
         <div class="card-corner top-left"></div>
         <div class="card-corner bottom-right"></div>
-        <div class="feature-decoration support-avatar"></div>
-      </div>
-    </section>
-
-    <section class="game-types">
-      <h2 class="section-title">Популярные игры</h2>
-      <div class="game-cards">
-        <div class="game-card">
-          <div class="game-card-icon"><i class="fas fa-trophy"></i></div>
-          <h3>Texas Hold'em</h3>
-          <p>Классический вариант покера с двумя закрытыми картами и пятью общими картами.</p>
-        </div>
-        <div class="game-card">
-          <div class="game-card-icon"><i class="fas fa-gem"></i></div>
-          <h3>Omaha</h3>
-          <p>Четыре закрытые карты и пять общих карт для создания лучшей комбинации.</p>
-        </div>
-        <div class="game-card">
-          <div class="game-card-icon"><i class="fas fa-bolt"></i></div>
-          <h3>Spin & Go</h3>
-          <p>Быстрые турниры с случайным призовым фондом и низким бай-ином.</p>
-        </div>
       </div>
     </section>
 
     <section class="platform">
-      <div class="glassmorphism white-glass">
+      <div class="glassmorphism">
         <div class="chips-decoration left"></div>
         <div class="chips-decoration right"></div>
-        <h3><i class="fas fa-mobile-alt"></i> Играйте на ClubGG</h3>
-        <p>QQQ Club эксклюзивно представлен на ClubGG. Скачайте приложение сегодня и начните играть!</p>
-        <div class="devices-mockup">
-          <img src="/api/placeholder/320/180" alt="ClubGG на различных устройствах" class="responsive-image">
-        </div>
+        <h3><i class="fas fa-mobile-alt"></i> Играй на ClubGG</h3>
+        <p>Доступно эксклюзивно на ClubGG — скачай и побеждай!</p>
         <a href="#" class="clubgg-button">
           <i class="fas fa-download"></i> Скачать ClubGG
         </a>
@@ -195,159 +118,102 @@
     </section>
 
     <section class="jackpot">
-      <div class="glassmorphism jackpot-container white-glass">
+      <div class="glassmorphism jackpot-container">
         <div class="jackpot-title">
           <i class="fas fa-trophy"></i>
-          <h3>Weekly Jackpot</h3>
+          <h3>Еженедельный Джекпот</h3>
           <i class="fas fa-trophy"></i>
         </div>
         <div class="jackpot-amount">$10,000</div>
-        <div class="jackpot-timer">
-          <div class="timer-block">
-            <div class="timer-value">2</div>
-            <div class="timer-label">Дни</div>
-          </div>
-          <div class="timer-block">
-            <div class="timer-value">18</div>
-            <div class="timer-label">Часы</div>
-          </div>
-          <div class="timer-block">
-            <div class="timer-value">45</div>
-            <div class="timer-label">Минуты</div>
-          </div>
-        </div>
-        <p>Присоединяйтесь к нашим еженедельным турнирам и заберите главный приз!</p>
-        <a href="#" class="register-button">Зарегистрироваться</a>
-      </div>
-    </section>
-
-    <section class="testimonials">
-      <h2 class="section-title">Отзывы игроков</h2>
-      <div class="testimonials-container">
-        <div class="testimonial">
-          <div class="testimonial-avatar"></div>
-          <div class="testimonial-content">
-            <div class="testimonial-quote">"Лучший покерный клуб, в котором я когда-либо играл. Отличная атмосфера и профессиональная поддержка."</div>
-            <div class="testimonial-author">- Алексей К.</div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-avatar"></div>
-          <div class="testimonial-content">
-            <div class="testimonial-quote">"Невероятные турниры и щедрые бонусы. Я больше никогда не вернусь к другим покерным сайтам!"</div>
-            <div class="testimonial-author">- Мария С.</div>
-          </div>
-        </div>
+        <p>Испытай удачу в наших турнирах!</p>
       </div>
     </section>
 
     <footer>
-      <div class="footer-content white-glass">
-        <div class="poker-hand-decoration">
-          <div class="mini-card"></div>
-          <div class="mini-card"></div>
-          <div class="mini-card"></div>
-          <div class="mini-card"></div>
-          <div class="mini-card"></div>
-        </div>
+      <div class="footer-content">
         <p>
           <span class="card-icon">♠️</span>
           <span class="card-icon">♥️</span>
           <span class="card-icon">♦️</span>
           <span class="card-icon">♣️</span>
         </p>
-        <p>&copy; 2024 QQQ Club. All rights reserved.</p>
+        <p>© 2025 QQQ Club. All rights reserved.</p>
       </div>
     </footer>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-      // Loading screen animation
       const loadingScreen = document.getElementById('loadingScreen');
       const loadingContent = document.getElementById('loadingContent');
       const cards = Array.from(loadingContent.querySelectorAll('.card'));
-      
+
       function animateCards() {
         cards.forEach((card, index) => {
           setTimeout(() => {
             card.classList.add('flip');
-            setTimeout(() => {
-              card.classList.remove('flip');
-            }, 500);
+            setTimeout(() => card.classList.remove('flip'), 500);
           }, index * 200);
         });
       }
-      
+
       let animationInterval = setInterval(animateCards, 1500);
-      
-      // Simulate loading and hide loading screen
       setTimeout(() => {
         clearInterval(animationInterval);
         loadingScreen.classList.add('fade-out');
-        setTimeout(() => {
-          loadingScreen.style.display = 'none';
-        }, 800);
+        setTimeout(() => loadingScreen.style.display = 'none', 800);
       }, 2500);
-      
-      // Generate card particles
-      const particlesContainer = document.getElementById('cardParticles');
+
+      // Card particles
+      const cardParticles = document.getElementById('cardParticles');
       const suits = ['♠️', '♥️', '♦️', '♣️'];
       const values = ['A', 'K', 'Q', 'J', '10'];
-      
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 20; i++) {
         const particle = document.createElement('div');
         const suit = suits[Math.floor(Math.random() * suits.length)];
         const value = values[Math.floor(Math.random() * values.length)];
-        
         particle.className = 'card-particle';
         particle.innerHTML = `${value}<small>${suit}</small>`;
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.top = `${Math.random() * 100}%`;
         particle.style.animationDelay = `${Math.random() * 10}s`;
-        particle.style.animationDuration = `${10 + Math.random() * 20}s`;
-        
-        particlesContainer.appendChild(particle);
+        particle.style.animationDuration = `${15 + Math.random() * 20}s`;
+        cardParticles.appendChild(particle);
       }
-      
-      // Parallax effect for floating elements
+
+      // Chip particles
+      const chipParticles = document.getElementById('chipParticles');
+      const chipColors = ['#e74c3c', '#2ecc71', '#daa520'];
+      for (let i = 0; i < 15; i++) {
+        const chip = document.createElement('div');
+        chip.className = 'chip-particle';
+        chip.style.background = chipColors[Math.floor(Math.random() * chipColors.length)];
+        chip.style.left = `${Math.random() * 100}%`;
+        chip.style.top = `${Math.random() * 100}%`;
+        chip.style.animationDelay = `${Math.random() * 12}s`;
+        chip.style.animationDuration = `${20 + Math.random() * 25}s`;
+        chipParticles.appendChild(chip);
+      }
+
+      // Flip effect for stats
+      const flipBlocks = document.querySelectorAll('.flip-block');
+      flipBlocks.forEach(block => {
+        block.addEventListener('mouseenter', () => block.classList.add('flipped'));
+        block.addEventListener('mouseleave', () => block.classList.remove('flipped'));
+      });
+
+      // Parallax for floating elements
       const floatingElements = document.querySelectorAll('.floating-element');
-      
       window.addEventListener('mousemove', (e) => {
         const mouseX = e.clientX / window.innerWidth;
         const mouseY = e.clientY / window.innerHeight;
-        
         floatingElements.forEach(element => {
-          const moveFactor = parseInt(element.getAttribute('data-move-factor') || 5);
+          const moveFactor = parseInt(element.getAttribute('data-move-factor') || 10);
           const offsetX = (mouseX - 0.5) * moveFactor;
           const offsetY = (mouseY - 0.5) * moveFactor;
-          
           element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
         });
       });
-      
-      // Stat cards flip effect
-      const statCards = document.querySelectorAll('.stat-card');
-      
-      statCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          card.querySelector('.stat-card-inner').style.transform = 'rotateY(180deg)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-          card.querySelector('.stat-card-inner').style.transform = 'rotateY(0)';
-        });
-      });
-      
-      // Countdown timer
-      function updateTimer() {
-        // This would be replaced with actual countdown logic
-        // For demo purposes, we'll just keep the static numbers
-      }
-      
-      // Initialize timer
-      updateTimer();
-      // setInterval(updateTimer, 1000);
     });
   </script>
 </body>
