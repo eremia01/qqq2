@@ -1,219 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QQQ Club - Elite Poker Experience</title>
+  <title>QQQ Poker Club</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <!-- Loading Screen -->
-  <div id="loadingScreen" class="loading-screen">
-    <div class="poker-chip">
-      <div class="chip-inner">
-        <span>QQQ</span>
-      </div>
-    </div>
-    <div id="loadingContent" class="loading-content">
-      <span class="card" data-suit="♦️">A<small>♦️</small></span>
-      <span class="card" data-suit="♣️">K<small>♣️</small></span>
-      <span class="card" data-suit="♠️">Q<small>♠️</small></span>
-      <span class="card" data-suit="♥️">J<small>♥️</small></span>
-    </div>
+  <!-- Задний план с покерными частицами -->
+  <div class="poker-bg">
+    <div class="card-particles"></div>
+    <div class="chip-particles"></div>
   </div>
 
-  <!-- Card and Chip Particles Background -->
-  <div id="cardParticles" class="card-particles"></div>
-  <div id="chipParticles" class="chip-particles"></div>
-
   <div class="container">
-    <!-- Poker Table Shape Background -->
-    <div class="poker-table-bg"></div>
-
-    <!-- Floating Poker Elements -->
-    <div class="floating-element chip"></div>
-    <div class="floating-element chip2"></div>
-    <div class="floating-element chip3"></div>
-    <div class="floating-element card1"></div>
-    <div class="floating-element card2"></div>
-    <div class="floating-element poker-dice"></div>
-
-    <header>
+    <!-- Логотип с анимацией раскладывания карт -->
+    <header class="glassmorphism">
       <div class="logo">
-        <div class="logo-cards">
-          <span class="logo-card">Q<small>♠️</small></span>
-          <span class="logo-card">Q<small>♥️</small></span>
-          <span class="logo-card">Q<small>♦️</small></span>
-        </div>
-        <h1>QQQ CLUB</h1>
+        <span class="logo-card" data-suit="♠️">Q</span>
+        <span class="logo-card" data-suit="♥️">Q</span>
+        <span class="logo-card" data-suit="♦️">Q</span>
+        <h1>POKER CLUB</h1>
       </div>
-      <p>Элитный покерный опыт</p>
     </header>
 
-    <section class="hero">
-      <div class="glassmorphism">
-        <div class="card-decoration left-top"></div>
-        <div class="card-decoration right-bottom"></div>
-        <h2><i class="fas fa-crown"></i> Погрузись в мир высоких ставок</h2>
-        <p>QQQ Club — это эксклюзивный покерный опыт на платформе ClubGG с турнирами и приватными столами.</p>
-        <a href="t.me/qqqclub_manager" class="telegram-button">
-          <i class="fab fa-telegram-plane"></i> Связаться с агентом
-        </a>
-      </div>
+    <!-- Главный блок -->
+    <section class="hero glassmorphism">
+      <h2>Погрузись в покерный мир</h2>
+      <p>Эксклюзивные столы, турниры и высокие ставки ждут тебя!</p>
+      <a href="#" class="poker-button">Играть сейчас</a>
     </section>
 
+    <!-- Статистика с переворотом -->
     <section class="stats">
-      <div class="stat glassmorphism flip-block">
-        <div class="stat-icon"><i class="fas fa-users"></i></div>
+      <div class="stat glassmorphism">
+        <span class="stat-card">♠️</span>
         <h3>5000+</h3>
-        <p>Активных игроков 🎉</p>
+        <p>Игроков</p>
       </div>
-      <div class="stat glassmorphism flip-block">
-        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+      <div class="stat glassmorphism">
+        <span class="stat-card">♥️</span>
         <h3>150+</h3>
-        <p>Турниров в месяц 🏆</p>
+        <p>Турниров</p>
       </div>
-      <div class="stat glassmorphism flip-block">
-        <div class="stat-icon"><i class="fas fa-coins"></i></div>
+      <div class="stat glassmorphism">
+        <span class="stat-card">♦️</span>
         <h3>$1M+</h3>
-        <p>Выигрышей 💰</p>
+        <p>Выигрышей</p>
       </div>
     </section>
-
-    <section class="features">
-      <div class="feature glassmorphism">
-        <div class="feature-icon"><i class="fas fa-coins"></i></div>
-        <h3>Высокие ставки</h3>
-        <p>Играй на красных и зеленых столах с крупными призами.</p>
-        <div class="card-corner top-left"></div>
-        <div class="card-corner bottom-right"></div>
-      </div>
-      <div class="feature glassmorphism">
-        <div class="feature-icon"><i class="fas fa-lock"></i></div>
-        <h3>Приватные игры</h3>
-        <p>Создай свой стол с покерными фишками и кубиками.</p>
-        <div class="card-corner top-left"></div>
-        <div class="card-corner bottom-right"></div>
-      </div>
-      <div class="feature glassmorphism">
-        <div class="feature-icon"><i class="fas fa-headset"></i></div>
-        <h3>Поддержка 24/7</h3>
-        <p>Всегда на связи для твоей удачной руки.</p>
-        <div class="card-corner top-left"></div>
-        <div class="card-corner bottom-right"></div>
-      </div>
-    </section>
-
-    <section class="platform">
-      <div class="glassmorphism">
-        <div class="chips-decoration left"></div>
-        <div class="chips-decoration right"></div>
-        <h3><i class="fas fa-mobile-alt"></i> Играй на ClubGG</h3>
-        <p>Доступно эксклюзивно на ClubGG — скачай и побеждай!</p>
-        <a href="#" class="clubgg-button">
-          <i class="fas fa-download"></i> Скачать ClubGG
-        </a>
-      </div>
-    </section>
-
-    <section class="jackpot">
-      <div class="glassmorphism jackpot-container">
-        <div class="jackpot-title">
-          <i class="fas fa-trophy"></i>
-          <h3>Еженедельный Джекпот</h3>
-          <i class="fas fa-trophy"></i>
-        </div>
-        <div class="jackpot-amount">$10,000</div>
-        <p>Испытай удачу в наших турнирах!</p>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-content">
-        <p>
-          <span class="card-icon">♠️</span>
-          <span class="card-icon">♥️</span>
-          <span class="card-icon">♦️</span>
-          <span class="card-icon">♣️</span>
-        </p>
-        <p>© 2025 QQQ Club. All rights reserved.</p>
-      </div>
-    </footer>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const loadingScreen = document.getElementById('loadingScreen');
-      const loadingContent = document.getElementById('loadingContent');
-      const cards = Array.from(loadingContent.querySelectorAll('.card'));
+    // Анимация частиц
+    const cardParticles = document.querySelector('.card-particles');
+    const suits = ['♠️', '♥️', '♦️', '♣️'];
+    for (let i = 0; i < 20; i++) {
+      const card = document.createElement('div');
+      card.className = 'card-particle';
+      card.innerHTML = suits[Math.floor(Math.random() * 4)];
+      card.style.left = `${Math.random() * 100}%`;
+      card.style.animationDuration = `${15 + Math.random() * 20}s`;
+      cardParticles.appendChild(card);
+    }
 
-      function animateCards() {
-        cards.forEach((card, index) => {
-          setTimeout(() => {
-            card.classList.add('flip');
-            setTimeout(() => card.classList.remove('flip'), 500);
-          }, index * 200);
-        });
-      }
-
-      let animationInterval = setInterval(animateCards, 1500);
-      setTimeout(() => {
-        clearInterval(animationInterval);
-        loadingScreen.classList.add('fade-out');
-        setTimeout(() => loadingScreen.style.display = 'none', 800);
-      }, 2500);
-
-      // Card particles
-      const cardParticles = document.getElementById('cardParticles');
-      const suits = ['♠️', '♥️', '♦️', '♣️'];
-      const values = ['A', 'K', 'Q', 'J', '10'];
-      for (let i = 0; i < 20; i++) {
-        const particle = document.createElement('div');
-        const suit = suits[Math.floor(Math.random() * suits.length)];
-        const value = values[Math.floor(Math.random() * values.length)];
-        particle.className = 'card-particle';
-        particle.innerHTML = `${value}<small>${suit}</small>`;
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.top = `${Math.random() * 100}%`;
-        particle.style.animationDelay = `${Math.random() * 10}s`;
-        particle.style.animationDuration = `${15 + Math.random() * 20}s`;
-        cardParticles.appendChild(particle);
-      }
-
-      // Chip particles
-      const chipParticles = document.getElementById('chipParticles');
-      const chipColors = ['#e74c3c', '#2ecc71', '#daa520'];
-      for (let i = 0; i < 15; i++) {
-        const chip = document.createElement('div');
-        chip.className = 'chip-particle';
-        chip.style.background = chipColors[Math.floor(Math.random() * chipColors.length)];
-        chip.style.left = `${Math.random() * 100}%`;
-        chip.style.top = `${Math.random() * 100}%`;
-        chip.style.animationDelay = `${Math.random() * 12}s`;
-        chip.style.animationDuration = `${20 + Math.random() * 25}s`;
-        chipParticles.appendChild(chip);
-      }
-
-      // Flip effect for stats
-      const flipBlocks = document.querySelectorAll('.flip-block');
-      flipBlocks.forEach(block => {
-        block.addEventListener('mouseenter', () => block.classList.add('flipped'));
-        block.addEventListener('mouseleave', () => block.classList.remove('flipped'));
-      });
-
-      // Parallax for floating elements
-      const floatingElements = document.querySelectorAll('.floating-element');
-      window.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX / window.innerWidth;
-        const mouseY = e.clientY / window.innerHeight;
-        floatingElements.forEach(element => {
-          const moveFactor = parseInt(element.getAttribute('data-move-factor') || 10);
-          const offsetX = (mouseX - 0.5) * moveFactor;
-          const offsetY = (mouseY - 0.5) * moveFactor;
-          element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-        });
-      });
+    // Анимация логотипа
+    const logoCards = document.querySelectorAll('.logo-card');
+    logoCards.forEach((card, i) => {
+      card.style.animation = `dealCard 0.5s ease ${i * 0.2}s forwards`;
     });
   </script>
 </body>
