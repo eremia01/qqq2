@@ -1,20 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #141e30;
+  --secondary-color: #243b55;
+  --accent-color: #daa520;
+  --text-color: #2a2a2a;
+  --text-light: #555;
+  --text-dark: #111;
+  --card-red: #e74c3c;
+  --card-black: #2c3e50;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-dark-bg: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  --telegram-color: #2AABEE;
+  --clubgg-color: #007bff;
+  --red-accent: #e74c3c;
+  --green-accent: #2ecc71;
+  --gold-color: #ffd700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #141e30, #243b55);
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ffffff, #f0f8ff, #e6f2ff);
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #fff;
-  /* overflow: hidden; Ensure no scrollbars */
+  color: var(--text-color);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Poker Background Elements */
+.poker-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.poker-felt {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, rgba(16, 80, 30, 0.15), rgba(10, 50, 20, 0.05));
+  border-radius: 100px;
+  transform: rotate(-5deg);
+}
+
+.chip-stack {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 70%;
+  left: 80%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="20" r="20" fill="%23daa520" /><circle cx="50" cy="30" r="20" fill="%23e74c3c" /><circle cx="50" cy="40" r="20" fill="%232ecc71" /><circle cx="50" cy="50" r="20" fill="%23daa520" /></svg>') no-repeat center/contain;
+}
+
+.dealer-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 20%;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  border: 2px solid #333;
+}
+
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.8s ease;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+}
+
+.poker-chip {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #111, #333);
+  border: 6px dashed var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: rotate 4s linear infinite;
+}
+
+.chip-inner {
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(#222, #000);
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-content {
+  display: flex;
+  gap: 15px;
+}
+
+.loading-content .card {
+  position: relative;
+  width: 60px;
+  height: 90px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: #222;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+
+.loading-content .card[data-suit="♥️"],
+.loading-content .card[data-suit="♦️"] {
+  color: var(--card-red);
+}
+
+.loading-content .card[data-suit="♠️"],
+.loading-content .card[data-suit="♣️"] {
+  color: var(--card-black);
+}
+
+.loading-content .card small {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 0.5em;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+/* Card Particles */
+.card-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.card-particle {
+  position: absolute;
+  font-size: 1rem;
+  color: rgba(120, 120, 120, 0.15);
+  font-weight: bold;
+  opacity: 0.3;
+  animation: float-card 20s infinite linear;
+}
+
+@keyframes float-card {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+  }
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
-  margin: 20px;
+  margin: 40px 0;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
@@ -22,238 +226,118 @@ body {
   z-index: 1;
 }
 
+/* Poker Table Background Shape */
+.poker-table-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 90%;
+  background: linear-gradient(135deg, rgba(16, 80, 30, 0.1), rgba(10, 50, 20, 0.05));
+  border-radius: 200px;
+  z-index: -1;
+  box-shadow: 0 0 100px rgba(0, 100, 0, 0.05);
+}
+
+/* Floating Elements */
+.floating-element {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.chip {
+  top: 15%;
+  right: 10%;
+  width: 50px;
+  height: 50px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23daa520" stroke="%23fff" stroke-width="2"/><circle cx="50" cy="50" r="35" fill="%23b8860b" stroke="%23fff" stroke-width="1"/><circle cx="50" cy="50" r="25" fill="%23daa520" stroke="%23fff" stroke-width="1"/></svg>') no-repeat center/contain;
+}
+
+.chip2 {
+  bottom: 20%;
+  left: 15%;
+  width: 40px;
+  height: 40px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23e74c3c" stroke="%23fff" stroke-width="2"/><circle cx="50" cy="50" r="35" fill="%23c0392b" stroke="%23fff" stroke-width="1"/><circle cx="50" cy="50" r="25" fill="%23e74c3c" stroke="%23fff" stroke-width="1"/></svg>') no-repeat center/contain;
+}
+
+.chip3 {
+  top: 40%;
+  left: 5%;
+  width: 35px;
+  height: 35px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%232ecc71" stroke="%23fff" stroke-width="2"/><circle cx="50" cy="50" r="35" fill="%2327ae60" stroke="%23fff" stroke-width="1"/><circle cx="50" cy="50" r="25" fill="%232ecc71" stroke="%23fff" stroke-width="1"/></svg>') no-repeat center/contain;
+}
+
+.card1 {
+  bottom: 30%;
+  right: 5%;
+  width: 60px;
+  height: 90px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 120"><rect x="2" y="2" width="76" height="116" rx="8" fill="%23fff" stroke="%23000" stroke-width="2"/><text x="10" y="30" font-family="Arial" font-size="24" font-weight="bold" fill="%23e74c3c">A</text><text x="58" y="100" font-family="Arial" font-size="24" font-weight="bold" fill="%23e74c3c">♥</text></svg>') no-repeat center/contain;
+  transform: rotate(-15deg);
+}
+
+.card2 {
+  top: 25%;
+  left: 10%;
+  width: 60px;
+  height: 90px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 120"><rect x="2" y="2" width="76" height="116" rx="8" fill="%23fff" stroke="%23000" stroke-width="2"/><text x="10" y="30" font-family="Arial" font-size="24" font-weight="bold">K</text><text x="58" y="100" font-family="Arial" font-size="24" font-weight="bold">♠</text></svg>') no-repeat center/contain;
+  transform: rotate(10deg);
+}
+
+/* Header Style */
 header {
   padding: 20px 0;
   margin-bottom: 30px;
 }
 
-header h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-header p {
-    font-size: 1.3em;
-    color: #ddd;
-    margin-bottom: 20px;
+.logo-cards {
+  display: flex;
+  margin-bottom: -15px;
 }
 
-.hero {
-  margin-bottom: 30px;
-}
-
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 40px;
+.logo-card {
+  position: relative;
+  width: 40px;
+  height: 60px;
+  background: white;
+  border-radius: 5px;
+  margin: 0 -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
-.glassmorphism:hover {
-    transform: translateY(-5px);
+.logo-card:nth-child(1) {
+  transform: rotate(-15deg);
+  z-index: 1;
 }
 
-.hero h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+.logo-card:nth-child(2) {
+  transform: translateY(-5px);
+  z-index: 3;
 }
 
-.telegram-button {
-  display: inline-block;
-  padding: 14px 28px;
-  background-color: #2AABEE;
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+.logo-card:nth-child(3) {
+  transform: rotate(15deg);
+  z-index: 2;
 }
 
-.telegram-button:hover {
-  background-color: #1b8ece;
-  transform: scale(1.05);
-}
-
-.features {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.feature {
-  width: 30%;
-  min-width: 280px;
-  padding: 30px;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.feature h3 {
-  margin-bottom: 15px;
-  font-size: 1.4em;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-footer {
-  padding: 20px 0;
-  font-size: 0.9em;
-  color: #ddd;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .container {
-    width: 95%;
-    margin: 10px;
-  }
-
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .feature {
-    width: 85%;
-  }
-}
-
-/* ClubGG Button Style */
-.clubgg-button {
-    display: inline-block;
-    padding: 14px 28px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.clubgg-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Platform Section Style */
-.platform {
-    margin-bottom: 40px;
-}
-
-.platform .glassmorphism {
-    padding: 30px;
-}
-
-.platform h3 {
-    margin-bottom: 15px;
-    font-size: 1.7em;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Dynamic Objects (Circles) */
-.dynamic-circle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    animation: float 6s infinite linear;
-}
-
-.dynamic-circle:nth-child(1) {
-    width: 60px;
-    height: 60px;
-    top: 10%;
-    left: 20%;
-    animation-delay: 0s;
-}
-
-.dynamic-circle:nth-child(2) {
-    width: 80px;
-    height: 80px;
-    top: 30%;
-    left: 60%;
-    animation-delay: 2s;
-}
-
-.dynamic-circle:nth-child(3) {
-    width: 40px;
-    height: 40px;
-    top: 70%;
-    left: 40%;
-    animation-delay: 4s;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Dynamic Emoji */
-.dynamic-emoji {
-    position: absolute;
-    font-size: 2em;
-    opacity: 0.3;
-    filter: blur(4px);
-    animation: emojiFloat 8s infinite alternate;
-}
-
-.dynamic-emoji:nth-child(1) {
-    top: 25%;
-    left: 10%;
-    animation-delay: 1s;
-}
-
-.dynamic-emoji:nth-child(2) {
-    top: 45%;
-    left: 70%;
-    font-size: 2.5em;
-    animation-delay: 3s;
-}
-
-.dynamic-emoji:nth-child(3) {
-    top: 65%;
-    left: 30%;
-    font-size: 3em;
-    animation-delay: 5s;
-}
-
-.dynamic-emoji:nth-child(4) {
-    top: 80%;
-    left: 90%;
-    font-size: 1.5em;
-    animation-delay: 2s;
-}
-
-@keyframes emojiFloat {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(30px, -50px);
-    }
-}
+.logo-
